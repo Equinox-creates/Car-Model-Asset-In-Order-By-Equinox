@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="EG">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equinox studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Enhanced Loading screen -->
+    <div id="loader" role="status" aria-live="polite" title="Loading - Equinox Studio">
+        <div class="loader-wrap">
+            <div class="rings" aria-hidden="true">
+                <span class="ring r1"></span>
+                <span class="ring r2"></span>
+                <span class="ring r3"></span>
+            </div>
+
+            <div class="logo">
+                <div class="logo-core">EQ</div>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" aria-hidden="true">
+                    <div class="progress-fill" style="width:0%"></div>
+                </div>
+            </div>
+
+            <div class="loader-subtext">Loading the car model...</div>
+            <div class="loader-bottom">By Equinox studio</div>
+        </div>
+    </div>
+
+    <div class="bgsl">
+
+    </div>
+
+    <div class="parent">
+
+    
+    <div class="cont">
+
+        <div class="tete">
+            <h1>Download Your Car Model With Rig In Order</h1>
+        </div>
+        <div class="lightn">
+            hello
+        </div>
+
+        <div class="img-warp">
+            <img src="img/car sh1.png" alt="">
+        </div>
+
+        <div class="downbtn">
+           <h4>Downlload it By Clicking on download button, to get start, i make it not betterly, because i have to hurry up,.</h4> <a href="Car Model And Rig in order, By Equinocoiobus 1_0_0/Car In Order.blend" download="Car Model And Rig in order, By Equinocoiobus 1_0_0/Car In Order.blend"><button>Download</button></a>
+        </div>
+    </div>
+    </div>
+    <script>
+        // Enforced 30s loader with progress and skip on click
+        (function (){
+            const TOTAL = 30; // seconds
+            let elapsed = 0;
+            const loader = document.getElementById('loader');
+            const fill = loader ? loader.querySelector('.progress-fill') : null;
+            const text = loader ? loader.querySelector('.progress-text') : null;
+
+            function hideLoader(){
+                if (!loader) return;
+                loader.classList.add('hidden');
+                setTimeout(()=> loader.remove(), 800);
+                clearInterval(timer);
+            }
+
+            // Start countdown after DOM loaded (not waiting for all assets)
+            window.addEventListener('DOMContentLoaded', ()=>{
+                if (!loader) return;
+                // Update every 250ms for smooth progress
+                timer = setInterval(()=>{
+                    elapsed += 0.25;
+                    const pct = Math.min(100, (elapsed / TOTAL) * 100);
+                    if (fill) fill.style.width = pct + '%';
+                    if (elapsed >= TOTAL) hideLoader();
+                }, 250);
+            });
+
+            // Allow user to skip by clicking the loader
+            // clicking to skip removed per design — loader stays until timer completes
+        })();
+    </script>
+
+    </script>
+
+</body>
+</html>
